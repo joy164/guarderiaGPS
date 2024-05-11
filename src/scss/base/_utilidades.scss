@@ -1,0 +1,39 @@
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.separacion-botom-top {
+    margin-top: calc($separacion / 2);
+    margin-bottom: calc($separacion / 2);
+}
+.contenido-centrado {
+    max-width: min(500px, 90%);
+    margin: 0 auto;
+}
+
+.alinear-derecha{
+    display: flex;
+    justify-content: flex-end;
+}
+.alinear-izquierda{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.alinear-centro{
+    display: flex;
+    justify-content:center;
+}
+
+.no-pading{
+    padding: 0;
+}
+
+.no-margin{
+    margin: 0;
+}
+.no-block{
+    display: inline;
+}

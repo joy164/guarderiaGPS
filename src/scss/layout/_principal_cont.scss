@@ -1,0 +1,83 @@
+#sidebar{
+    position: fixed;
+    width: 20rem;
+    height: 100%;
+    background-color: $naranja;
+    top: 0;
+    left: -20rem;
+    transition: all 200ms linear;
+    ul li{
+        color: $blanco;
+        font-size: 2rem;
+        text-align: center;
+        padding: 15px 10px;
+        margin: 2rem 1rem;
+        list-style: none;
+    
+        &.img-logo{
+            border-bottom: none;
+            width: 70%;
+            display: block;
+            margin: 0 auto;
+            
+            img{
+                border-radius: 50%;
+            }
+        }
+        
+        a{
+            color: $blanco;
+        }
+
+        &:hover{
+            border-radius: 1rem;
+            background-color: lighten($naranja, 15);
+            cursor: pointer;
+        }
+
+        &.btn-active{
+            border-radius: 1rem;
+            background-color: darken($amarillo, 10);    
+        }
+    }
+
+    .toggle-btn{
+        position: absolute;
+        left: 22rem;
+        top: 1rem;
+        cursor: pointer;
+
+        i{
+            display: block;
+            text-align: center;
+            font-size: 3rem;
+            border: 1px solid $negro;
+            border-radius: .5rem;
+        }
+    }
+
+    &.active{
+        left: 0;
+        ~ .cont-principal{
+           left: 27rem;
+           width: calc(100% - 29rem);
+        }
+    }
+}
+
+
+.cont-principal{
+    position: relative;
+    background-color: lighten($grisClaro, 2);
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    padding: 1rem 5rem;
+    min-height: calc(100vh - 2rem);
+    top: 0;
+    left: 7rem;
+    transition: all 200ms linear;
+    width: calc(100% - 9rem);
+
+}

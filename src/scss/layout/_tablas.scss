@@ -1,0 +1,43 @@
+.contenedor-tabla{
+    overflow-x: auto;
+}
+
+table.elementos{
+    margin-top: 2rem;
+    width: 100%;
+    border-spacing: 0;
+
+    thead{
+        background-color: $naranja;
+
+        th{
+            color: $blanco;
+            padding: 1rem;
+        }
+    }
+
+    tbody{
+        text-align: center;
+        
+        tr{
+            background-color: lighten($grisClaro, 8);
+        }
+        
+        td{
+            border-bottom: 2px solid $grisClaro;
+            &:last-of-type{
+                border-bottom: none;
+            }
+        }
+
+        td.imagen-tabla img{
+            width: 15rem;
+            margin: 1rem auto;
+        }
+        td .alinear-btn{
+            display: flex;
+            justify-content:space-evenly;
+        }
+    }
+
+}

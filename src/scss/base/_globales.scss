@@ -1,0 +1,66 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: $fuente_principal;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    padding: 0;
+    &.fijar-body{
+        overflow: hidden;
+    }
+    &.fondo-inicio{
+        background-color: #ffffff;
+        opacity: 1;
+        background-image:  linear-gradient(#3997F5 6px, transparent 6px), linear-gradient(90deg, #3997F5 6px, transparent 6px), linear-gradient(#3997F5 3px, transparent 3px), linear-gradient(90deg, #3997F5 3px, #ffffff 3px);
+        background-size: 150px 150px, 150px 150px, 30px 30px, 30px 30px;
+        background-position: -6px -6px, -6px -6px, -3px -3px, -3px -3px;
+    }
+    &.centrado-login{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+}
+
+p {
+    color: $negro;
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+img, picture {
+    width: 100%;
+    display: block;
+}
+
+h1, h2, h3 {
+    font-family: $fuente_principal;
+    margin: calc($separacion / 2) 0;
+    font-weight: 300;
+    text-align: center;
+    
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 3.4rem;
+}
+h3 {
+    font-size: 3rem;
+}
+h4 {
+    font-size: 2.6rem;
+}

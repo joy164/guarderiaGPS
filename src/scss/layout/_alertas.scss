@@ -1,0 +1,19 @@
+.alerta{
+    
+    margin: 1rem;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &.error{
+        background-color: $rojo;
+        color: $blanco;
+    }
+
+    &.exito{
+        background-color: $verde;
+        color: $blanco;
+    }
+
+
+}

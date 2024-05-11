@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/build/css/app.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Administrador de usuarios</title>
+</head>
+<body>
+    
+    <div id="sidebar" class="active">
+        <div class="toggle-btn">
+            <i class='bx bx-menu bx-lg'></i>
+        </div>
+
+        <ul class="no-pading">
+
+            <li class="img-logo">
+                <img src="/../../build/img/logo.png" alt="imagen logo" width="5%">
+            </li>
+
+
+            <a href="/admin/index.html">
+                <li>Inicio</li>
+            </a>
+            
+            <a href="/admin/infante/admin_Infante.html">
+                <li >Infantes</li>
+            </a>
+            
+            <a href="/admin//usuario/admin_usuario.html">
+                <li class="btn-active">Usuarios</li>
+            </a>
+                
+        </ul>
+    </div>
+
+    <div class="cont-principal">        
+        <h1 class="no-margin alinear-centro">Administrador de usuarios</h1>
+        
+        <div class="alinear-derecha">
+            <a href="/admin/infante/nuevo_infante.html" class="btn-verde-inline">Nuevo usuario</a>
+        </div>
+        
+        <div class="contenedor-tabla alinear-centro">
+            <table class="elementos">
+                <thead>
+                    <tr>
+                        <th>Nombre(s)</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($propiedades as $propiedad):?>
+                    <tr>
+                        <td>dsfsadf</td>
+                        <td>asdfasfasd</td>
+                        <td>
+                            <div class="alinear-btn">
+                                <a href="#" class="btn-azul-redondo"><i class='bx bx-map'></i></a>
+                                <a href="#" class="btn-rojo-redondo"> <i class='bx bx-trash' ></i></a>
+                                <a href="#" class="btn-amarillo-redondo"><i class='bx bxs-pencil' ></i></a>                                            
+                            </div>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td>dsfsadf</td>
+                        <td>asdfasfasd</td>
+                        <td>
+                            <div class="alinear-btn">
+                                <a href="#" class="btn-azul-redondo" data-bs-original-title="ver ubicación"><i class='bx bx-map'></i></a>
+                                <a href="#" class="btn-rojo-redondo"> <i class='bx bx-trash' ></i></a>
+                                <a href="#" class="btn-amarillo-redondo"><i class='bx bxs-pencil' ></i></a>                                            
+                            </div>
+                        </td>
+                    </tr>
+        
+                    <?php endforeach;?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="/build/js/bundle.min.js"></script>
+</body>
+</html>

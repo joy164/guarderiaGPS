@@ -1,0 +1,44 @@
+//botonoes con display block
+.btn-rojo-block{
+    @include boton($rojo, block)
+}
+.btn-verde-block{
+    @include boton($verde, block)
+}
+.btn-azul-block{
+    @include boton($azul, block)
+}
+.btn-naranja-block{
+    @include boton($naranja, block)
+}
+.btn-amarillo-block{
+    @include boton($amarillo, block)
+}
+
+//botonoes con display inline-block
+.btn-rojo-inline{
+    @include boton($rojo, inline-block)
+}
+.btn-verde-inline{
+    @include boton($verde, inline-block)
+}
+.btn-azul-inline{
+    @include boton($azul, inline-block)
+}
+.btn-naranja-inline{
+    @include boton($naranja, inline-block)
+}
+.btn-amarillo-inline{
+    @include boton($amarillo, inline-block)
+}
+
+//botones redondos
+.btn-azul-redondo{
+    @include botonRedondo($azul);
+}
+.btn-rojo-redondo{
+    @include botonRedondo($rojo);
+}
+.btn-amarillo-redondo{
+    @include botonRedondo($amarillo);
+}
