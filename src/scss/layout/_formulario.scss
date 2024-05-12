@@ -1,0 +1,148 @@
+.contenedor-principal{
+    background: $turquesa;
+    margin: 10rem auto;
+    overflow: hidden;
+    padding-bottom: 5rem;
+    position: relative;
+    width: 90%;
+
+    @include telefono{
+      width: 70rem;     
+    }
+}
+.contenedor-principal::before{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    border-width:0 60px 60px 0;
+    border-style:solid;
+    border-color: $blanco $blanco darken($turquesa, 20) darken($turquesa, 20);/* color borde y pestaña */
+
+}
+.titulo-inicio{
+    font-family: $fuente_cursiva;
+    color: $blanco;
+    font-weight: $bold;
+    font-size: 5rem;
+}
+
+.formulario{
+  background-color: $grisOscuro;
+  min-width: 100%;
+  margin: 0 auto;
+  padding: 3rem 2rem 3rem 2rem;
+  border-radius: 1rem;
+  
+  fieldset{
+    border-color: $amarillo;
+    border-radius: 1rem;
+
+    legend{
+      font-size: 1.8rem;
+      text-align: center;
+      text-transform: capitalize;
+      color: $blanco;
+
+      @include tablet{
+        text-align: left;
+      }
+    }
+    
+    &:nth-child(2),
+    &:nth-child(3){
+      margin-top: 3rem;
+    }
+  }
+}
+
+.campo{
+  margin-bottom: 1rem;
+
+  label{
+    color:  $blanco;
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+  }
+
+  textarea{
+    height: 15rem;
+    resize: none;
+  }
+
+}
+
+.file-input{
+  max-width: 20rem;
+  background-color: $amarillo;
+  border: 1px solid $blanco;
+  border-radius: .5rem;
+}
+.input-text{
+  width: 100%;
+  min-height: 4rem;
+  border-radius: .5rem;
+}
+
+@include tablet{
+  .contenedor-campos{
+    @include grid(2, 1rem);
+  }
+  
+  .text-restrict{
+    grid-row: 4 / 5;
+  }
+  
+  .input-largo{
+    grid-column: 1 / 3;
+  }
+
+  
+}
+
+.checkbox-wrapper{
+  
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+  }
+
+  .label {
+    cursor: pointer;
+  }
+
+  .check {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    opacity: 0;
+  }
+
+  .label svg {
+    vertical-align: middle;
+  }
+
+  .path1 {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    transition: .5s stroke-dashoffset;
+    opacity: 0;
+  }
+  
+  .check:checked + label svg g path {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+  
+.checkbox-wrapper *,
+  .checkbox-wrapper ::after,
+  .checkbox-wrapper ::before {
+  box-sizing: border-box;
+  user-select: none;
+}

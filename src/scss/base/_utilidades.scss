@@ -1,6 +1,27 @@
 .contenedor {
-    width: 95%;
+    width: 98%;
     max-width: 120rem;
+    margin: 0 auto;
+}
+
+.contenedor-sm{
+    width: 100%;
+    margin: 0 auto;
+    @include tablet{
+        width: 50%;
+    }
+}
+
+.contenedor-m{
+    width: 100%;
+    margin: 0 auto;
+    @include tablet{
+        width: 65%;
+    }
+}
+
+.contenedor-l{
+    width: 100%;
     margin: 0 auto;
 }
 

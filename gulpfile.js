@@ -44,11 +44,11 @@ function imagenes() {
 function watchArchivos() {
     watch(paths.scss, css);
     watch(paths.js, javascript);
-    watch(paths.imagenes, imagenes);
+    //watch(paths.imagenes, imagenes);
 }
 
 exports.css = css;
 exports.watchArchivos = watchArchivos;
-exports.imagenes = imagenes;
+//exports.imagenes = imagenes;
 
-exports.default = parallel(css, javascript, imagenes, watchArchivos); 
+exports.default = parallel(css, javascript, watchArchivos); 

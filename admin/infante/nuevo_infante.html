@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/build/css/app.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Administrador</title>
+</head>
+<body>
+    
+    <div id="sidebar">
+        <div class="toggle-btn">
+            <i class='bx bx-menu bx-lg'></i>
+        </div>
+
+        <ul class="no-pading">
+
+            <li class="img-logo">
+                <img src="../../build/img/logo.png" alt="imagen logo" width="5%">
+            </li>
+
+
+            <a href="/admin/index.html">
+                <li>Inicio</li>
+            </a>
+            
+            <a href="/admin/infante/admin_Infante.html">
+                <li class="btn-active">Infantes</li>
+            </a>
+
+            <a href="/admin/usuario/admin_usuario.html">
+                <li>Usuarios</li>
+            </a>
+                
+        </ul>
+    </div>
+
+    <div class="cont-principal">
+        <div class="alinear-izquierda">
+            <p>Infantes | Administrador de infantes | Registro de nuevo infante</p>
+        </div>
+
+        <div class="contenedor-m">
+
+            <div class="alinear-izquierda">
+                <a href="/admin/infante/admin_infante.html" class="btn-azul-inline">Regresar</a>
+            </div>
+
+            <form method="POST" action="" class="formulario" enctype="multipart/form-data">
+            
+                <fieldset>
+                    <legend>Información basica</legend>
+
+                    <div class ="contenedor-campos">
+                        
+                        <div class="campo input-largo">
+                            <label for="imagen">Fotografía de infante</label>
+                            <input name="imagen" id="imagen" class="file-input" type="file" accept="image/jpeg, image/png">
+                        </div>
+
+                        <div class="campo">
+                            <Labe for="nombre">Nombre:</Label>
+                            <input name="infante[nombre]" id="nombre" class ="input-text" type="text" placeholder="Nombre(s) del infante">    
+                        </div>
+
+                        <div class="campo">
+                            <Label for="apellidos">Apellidos:</Label>
+                            <input name="infante[apellidos]" id="apellidos" class ="input-text" type="text" placeholder="Apellidos del infante">    
+                        </div>
+                        
+                        <div class="campo">
+                            <Label for="id_brazalete">ID de brazalete:</Label>
+                            <input name="infante[id_brazalete]" id="id_brazalete" class ="input-text" type="text" placeholder="ID del brazalete del infante">
+                        </div>
+                
+                        <div class="campo text-restrict">
+                            <Label for="alergia_medicamentos">Alergias con medicamentos:</Label>
+                            <textarea name="infante[alergia_medicamentos]" id="alergia_medicamentos" class ="input-text text-restrict" placeholder="ingrese alergias o restricciones que tiene el infante medicamente"></textarea>    
+                        </div>
+
+                        <div class="campo text-restrict">
+                            <Label for="alergia_alimentos">Alergias con alimentos:</Label>
+                            <textarea name="infante[alergia_alimentos]" id="alergia_alimentos" class ="input-text text-restrict" placeholder="ingrese alergias o restricciones que tiene el infante con el alimento"></textarea>    
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Contacto de emergencia</legend>
+                    <div class ="contenedor-campos">
+                        <div class="campo">
+                            <Label for="nom_contacto">Nombre de contacto: </Label>
+                            <input name="infante[nom_contacto]" id="nom_contacto" class ="input-text" type="text" placeholder="Nombre(s) del contacto de emergencia">    
+                        </div>
+
+                        <div class="campo">
+                            <Label for="tel_contacto">Telefono de contacto: </Label>
+                            <input name="infante[tel_contacto]" id="tel_contacto" class ="input-text" type="tel" placeholder="Telefono del contacto de emergencia">    
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="alinear-derecha">
+                    <input type="submit" value="Registrar infante" class="btn-verde-block">
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/build/js/bundle.min.js"></script>
+</body>
+</html>

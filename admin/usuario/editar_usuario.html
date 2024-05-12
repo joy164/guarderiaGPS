@@ -1,23 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/build/css/app.css">
-    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>Iniciar Sesión</title>
+    <title>Administrador</title>
 </head>
+<body>
+    
+    <div id="sidebar">
+        <div class="toggle-btn">
+            <i class='bx bx-menu bx-lg'></i>
+        </div>
 
-<body class="fondo-inicio centrado-login">
-    <main class="contenedor-principal">
+        <ul class="no-pading">
 
-            <h1 class="titulo-inicio">Sistema de localización de infantes</h1>
-        
-            <form method="POST" action="" class="formulario contenedor-sm" enctype="multipart/form-data">
+            <li class="img-logo">
+                <img src="../../build/img/logo.png" alt="imagen logo" width="5%">
+            </li>
+
+
+            <a href="/admin/index.html">
+                <li>Inicio</li>
+            </a>
+            
+            <a href="/admin/infante/admin_Infante.html">
+                <li class="btn-active">Infantes</li>
+            </a>
+
+            <a href="/admin/usuario/admin_usuario.html">
+                <li>Usuarios</li>
+            </a>
+                
+        </ul>
+    </div>
+
+    <div class="cont-principal">
+        <div class="alinear-izquierda">
+            <p>Usuarios | Administrador de usuarios | Edicion usuario</p>
+        </div>
+
+        <div class="contenedor-m">
+
+            <div class="alinear-izquierda">
+                <a href="/admin/usuario/admin_usuario.html" class="btn-azul-inline">Regresar</a>
+            </div>
+
+            <form method="POST" action="" class="formulario" enctype="multipart/form-data">
             
                 <fieldset>
-                    <legend>Iniciar Sesión</legend>
+                    <legend>Información del usuario</legend>
+
+                    <div class="campo">
+                        <Label for="nombre">Nombre(s):</Label>
+                        <input name="usuario[nombre]" id="nombre" class ="input-text" type="text" placeholder="Nombre(s) del usuario">    
+                    </div>
 
                     <div class="campo">
                         <Label for="correo">Correo:</Label>
@@ -48,9 +88,9 @@
                     <input type="submit" value="Registrar usuario" class="btn-verde-block">
                 </div>
             </form>
-        
-    </main>
-
+        </div>
+    </div>
+    
     <script src="/build/js/bundle.min.js"></script>
 </body>
 </html>

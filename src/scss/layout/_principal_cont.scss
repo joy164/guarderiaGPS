@@ -1,22 +1,21 @@
 #sidebar{
     position: fixed;
-    width: 20rem;
+    width: 15rem;
     height: 100%;
     background-color: $naranja;
     top: 0;
-    left: -20rem;
+    left: -15rem;
     transition: all 200ms linear;
     ul li{
         color: $blanco;
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-align: center;
-        padding: 15px 10px;
-        margin: 2rem 1rem;
+        padding: 1rem .5rem;
+        margin: 2rem .5rem;
         list-style: none;
+        border-radius: 1rem;
     
         &.img-logo{
-            border-bottom: none;
-            width: 70%;
             display: block;
             margin: 0 auto;
             
@@ -30,54 +29,44 @@
         }
 
         &:hover{
-            border-radius: 1rem;
             background-color: lighten($naranja, 15);
             cursor: pointer;
         }
 
         &.btn-active{
-            border-radius: 1rem;
             background-color: darken($amarillo, 10);    
         }
     }
 
     .toggle-btn{
         position: absolute;
-        left: 22rem;
-        top: 1rem;
+        left: 16rem;
+        top: 1.5rem;
         cursor: pointer;
 
         i{
             display: block;
             text-align: center;
             font-size: 3rem;
-            border: 1px solid $negro;
+            border: 2px solid $negro;
             border-radius: .5rem;
         }
     }
 
     &.active{
         left: 0;
-        ~ .cont-principal{
-           left: 27rem;
-           width: calc(100% - 29rem);
-        }
     }
 }
 
 
 .cont-principal{
-    position: relative;
+    
     background-color: lighten($grisClaro, 2);
-    margin-top: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem;
     border-radius: 1rem;
     padding: 1rem 5rem;
     min-height: calc(100vh - 2rem);
-    top: 0;
-    left: 7rem;
     transition: all 200ms linear;
-    width: calc(100% - 9rem);
+    width: calc(100% - 2rem);
 
 }
