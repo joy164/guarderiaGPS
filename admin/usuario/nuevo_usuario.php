@@ -1,42 +1,20 @@
+<?php 
+    require '../../includes/app.php';    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/build/css/app.css">
+    <link rel="stylesheet" href="<?=CARPETA_ROOT?>/build/css/app.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <title>Administrador</title>
 </head>
 <body>
     
-    <div id="sidebar">
-        <div class="toggle-btn">
-            <i class='bx bx-menu bx-lg'></i>
-        </div>
-
-        <ul class="no-pading">
-
-            <li class="img-logo">
-                <img src="../../build/img/logo.png" alt="imagen logo" width="5%">
-            </li>
-
-
-            <a href="/admin/index.html">
-                <li>Inicio</li>
-            </a>
-            
-            <a href="/admin/infante/admin_Infante.html">
-                <li class="btn-active">Infantes</li>
-            </a>
-
-            <a href="/admin/usuario/admin_usuario.html">
-                <li>Usuarios</li>
-            </a>
-                
-        </ul>
-    </div>
+    <?php include_templete('slidebar', 3);?>
 
     <div class="cont-principal">
         <div class="alinear-izquierda">
@@ -46,7 +24,7 @@
         <div class="contenedor-m">
 
             <div class="alinear-izquierda">
-                <a href="/admin/usuario/admin_usuario.html" class="btn-azul-inline">Regresar</a>
+                <a href="<?=CARPETA_ROOT?>/admin/usuario/admin_usuario.php" class="btn-azul-inline">Regresar</a>
             </div>
 
             <form method="POST" action="" class="formulario" enctype="multipart/form-data">
@@ -91,6 +69,6 @@
         </div>
     </div>
     
-    <script src="/build/js/bundle.min.js"></script>
+    <script src="<?=CARPETA_ROOT?>/build/js/bundle.min.js"></script>
 </body>
 </html>
