@@ -5,43 +5,9 @@
     $ID = $_GET['id'] ?? 0;
 
     filtrarID($ID, CARPETA_ROOT.'/admin/admin_infante.php?actualizado=3');
-
-    $errores = Infante::get_errores();
+    
     $infante = Infante::find($ID);
     $tipoForm = 3;
-    
-    if($_SERVER['REQUEST_METHOD'] === 'POST'){
-        
-        $infante->sincronizarObjeto($_POST['infante']);
-        
-        $imagen = $_FILES['imagen'];
-        $nombreImagen = md5( uniqid(rand(), true) ).".jpg";
-
-        if($imagen['name']){
-            if(!is_dir(CARPETA_IMG))
-                mkdir(CARPETA_IMG);
-            
-            if(move_uploaded_file($imagen['tmp_name'], CARPETA_IMG.$nombreImagen)){
-                unlink(CARPETA_IMG.$infante->FOTO);
-                $infante->set_imagen($nombreImagen);
-            }    
-        }
-
-        $errores = $infante->validar();
-
-        if(empty($errores)){
-
-            $resultado = $infante->update();
-
-            if($resultado){
-                move_uploaded_file($imagen['tmp_name'], CARPETA_IMG.$nombreImagen);
-                header('Location: '.CARPETA_ROOT.'/admin/infante/admin_Infante.php?actualizado=1');
-            }
-            else
-                header('Location: '.CARPETA_ROOT.'/admin/infante/admin_Infante.php?actualizado=2');
-        }
-    }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

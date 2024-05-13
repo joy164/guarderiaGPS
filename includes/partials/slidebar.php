@@ -17,7 +17,7 @@
             <li <?=$opc===1?"class=\"btn-active\"":""?> >Inicio</li>
         </a>
         
-        <a href="<?=CARPETA_ROOT?>/admin/infante/admin_Infante.php">
+        <a href="<?=CARPETA_ROOT?>/admin/infante/admin_infante.php">
             <li <?=$opc===2?"class=\"btn-active\"":""?>>Infantes</li>
         </a>
 

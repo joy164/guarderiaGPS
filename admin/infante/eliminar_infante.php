@@ -11,8 +11,8 @@
     $resultado = Infante::delete($ID);
 
     if($resultado)
-        header('Location: '.CARPETA_ROOT.'/admin/infante/admin_Infante.php?eliminado=1');
+        header('Location: '.CARPETA_ROOT.'/admin/infante/admin_infante.php?eliminado=1');
     else
-        header('Location: '.CARPETA_ROOT.'/admin/infante/admin_Infante.php?eliminado=2');
+        header('Location: '.CARPETA_ROOT.'/admin/infante/admin_infante.php?eliminado=2');
 
     

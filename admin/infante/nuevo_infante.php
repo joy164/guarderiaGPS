@@ -28,10 +28,10 @@
 
             if($resultado){
                 move_uploaded_file($imagen['tmp_name'], CARPETA_IMG.$nombreImagen);
-                header('Location: '.CARPETA_ROOT.'/admin/infante/admin_Infante.php?creado=1');
+                header('Location: '.CARPETA_ROOT.'/admin/infante/admin_infante.php?creado=1');
             }
             else
-                header('Location: '.CARPETA_ROOT.'/admin/infante/admin_Infante.php?creado=2');
+                header('Location: '.CARPETA_ROOT.'/admin/infante/admin_infante.php?creado=2');
 
         }
     }
