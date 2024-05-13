@@ -1,6 +1,7 @@
 <?php 
     require '../../includes/app.php';
     use App\Infante;
+    estaAutenticado();
 
     $infante = new Infante;
     $tipoForm = 1;

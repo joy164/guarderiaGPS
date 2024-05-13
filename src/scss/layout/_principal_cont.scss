@@ -6,35 +6,49 @@
     top: 0;
     left: -15rem;
     transition: all 200ms linear;
-    ul li{
-        color: $blanco;
-        font-size: 1.5rem;
-        text-align: center;
-        padding: 1rem .5rem;
-        margin: 2rem .5rem;
-        list-style: none;
-        border-radius: 1rem;
-    
-        &.img-logo{
-            display: block;
-            margin: 0 auto;
+    ul{
+        
+        .btn-logout{
+            padding: 1rem 2rem;
+            color: $negro;
             
-            img{
-                border-radius: 50%;
+            &:hover{
+                text-decoration: underline $negro;
             }
         }
         
-        a{
+        
+
+        li{
             color: $blanco;
-        }
-
-        &:hover{
-            background-color: lighten($naranja, 15);
-            cursor: pointer;
-        }
-
-        &.btn-active{
-            background-color: darken($amarillo, 10);    
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 1rem .5rem;
+            margin: 2rem .5rem;
+            list-style: none;
+            border-radius: 1rem;
+        
+            &.img-logo{
+                display: block;
+                margin: 0 auto;
+                
+                img{
+                    border-radius: 50%;
+                }
+            }
+            
+            a{
+                color: $blanco;
+            }
+    
+            &:hover{
+                background-color: lighten($naranja, 15);
+                cursor: pointer;
+            }
+    
+            &.btn-active{
+                background-color: darken($amarillo, 10);    
+            }
         }
     }
 

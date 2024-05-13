@@ -60,7 +60,7 @@
 <body>
     
     <div class="cont-principal">
-        <div class="alinear-izquierda">
+        <div class="alinear-centro">
             <p>Localizacion del infante: <?=$infante->NOM_INFANTE?></p>
         </div>
 

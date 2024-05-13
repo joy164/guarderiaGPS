@@ -1,5 +1,6 @@
 <?php 
     require '../includes/app.php';
+    estaAutenticado();
 ?>
 
 <!DOCTYPE html>

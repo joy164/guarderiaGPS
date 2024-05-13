@@ -8,8 +8,11 @@
         <li class="img-logo">
             <img src="<?=CARPETA_ROOT?>/build/img/logo.png" alt="imagen logo" width="5%">
         </li>
-
-
+    
+        <a href="<?=CARPETA_ROOT?>/logout.php">
+            <li class="btn-logout">Cerrar sesión</li>
+        </a>
+    
         <a href="<?=CARPETA_ROOT?>/admin/index.php">
             <li <?=$opc===1?"class=\"btn-active\"":""?> >Inicio</li>
         </a>
@@ -21,6 +24,6 @@
         <a href="<?=CARPETA_ROOT?>/admin/usuario/admin_usuario.php">
             <li <?=$opc===3?"class=\"btn-active\"":""?>>Usuarios</li>
         </a>
-            
+        
     </ul>
 </div>

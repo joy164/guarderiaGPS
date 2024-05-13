@@ -22,14 +22,13 @@ class Usuario{
     }
     public function create(){
         $atributos = $this->santizarDatos();
-    
+
         //insertar en la base de datos
         $query = "INSERT INTO USUARIO( ";
         $query .= join(', ', array_keys($atributos));
         $query .= " ) VALUES ('";
         $query .= join("', '", array_values($atributos));
         $query .= "' )";
-
         $resultado = self::$db->query($query);
 
         return $resultado;
@@ -38,11 +37,11 @@ class Usuario{
         
         //sanitizar datos
         $atributos = $this->santizarDatos();
-
         $valores =[];
 
         foreach($atributos as $key => $value){
-            $valores[] = "$key = '$value'";
+            if(!empty($value))
+                $valores[] = "$key = '$value'";
         }
 
         $query = "UPDATE USUARIO  SET ";
@@ -87,9 +86,13 @@ class Usuario{
     public function validar(){
         if(!$this->NOM_USER) self::$errores[]= "El nombre es obligatorio";
         if(!$this->CORREO_USER) self::$errores[]= "El correo es obligatorio";
-        if(!$this->CONTRASEÑA_USER) self::$errores[]= "La contraseña es obligatoria";
+        if(!$this->CONTRASEÑA_USER && !$this->ID_USUARIO) self::$errores[]= "La contraseña es obligatoria";
     
         return self::$errores;
+    }
+    public function hashPass(){
+        $tmp_pass = password_hash($this->CONTRASEÑA_USER, PASSWORD_DEFAULT);
+        $this->CONTRASEÑA_USER = $tmp_pass;
     }  
     public static function get_errores(){
         return self::$errores;

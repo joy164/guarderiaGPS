@@ -1,5 +1,9 @@
 <?php 
     require '../../includes/app.php';
+    use App\Usuario;
+    estaAutenticado();
+    
+    $usuarios = Usuario::all();
 
     $creado = $_GET['creado'] ?? null;
     $actualizado = $_GET['actualizado'] ?? null;
@@ -13,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?=CARPETA_ROOT?>/build/css/app.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <title>Administrador de usuarios</title>
 </head>
@@ -56,35 +61,23 @@
                 <thead>
                     <tr>
                         <th>Nombre(s)</th>
-                        <th>Usuario</th>
+                        <th>Correo</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
-                    <tr>
-                        <td>dsfsadf</td>
-                        <td>asdfasfasd</td>
-                        <td>
-                            <div class="alinear-btn">
-                                <a href="#" class="btn-rojo-redondo"> <i class='bx bx-trash' ></i></a>
-                                <a href="#" class="btn-amarillo-redondo"><i class='bx bxs-pencil' ></i></a>                                            
-                            </div>
-                        </td>
-                    </tr>
-        
-                    <tr>
-                        <td>dsfsadf</td>
-                        <td>asdfasfasd</td>
-                        <td>
-                            <div class="alinear-btn">
-                                <a href="#" class="btn-rojo-redondo"> <i class='bx bx-trash' ></i></a>
-                                <a href="#" class="btn-amarillo-redondo"><i class='bx bxs-pencil' ></i></a>                                            
-                            </div>
-                        </td>
-                    </tr>
-        
-                    
+                    <?php foreach($usuarios as $usuario):?>
+                        <tr>
+                            <td><?=$usuario->NOM_USER?></td>
+                            <td><?=$usuario->CORREO_USER?></td>
+                            <td>
+                                <div class="alinear-btn">
+                                    <a href="javascript:AlertaEliminarItem(<?=$usuario->ID_USUARIO ?>, '<?=CARPETA_ROOT?>/admin/usuario/eliminar_usuario.php');" class="btn-rojo-redondo"> <i class='bx bx-trash' ></i></a>
+                                    <a href="<?=CARPETA_ROOT?>/admin/usuario/editar_usuario.php?id=<?=$usuario->ID_USUARIO?>" class="btn-amarillo-redondo"><i class='bx bxs-pencil' ></i></a>                                            
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endforeach;?>
                 </tbody>
             </table>
         </div>

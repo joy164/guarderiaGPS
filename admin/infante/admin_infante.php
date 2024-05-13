@@ -1,7 +1,8 @@
 <?php 
     require '../../includes/app.php';    
     use App\Infante;
-
+    estaAutenticado();
+    
     $infantes = Infante::all();
 
     $creado = $_GET['creado'] ?? null;
@@ -18,6 +19,7 @@
     
     <link rel="stylesheet" href="<?=CARPETA_ROOT?>/build/css/app.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <title>Administrador de infante</title>
 </head>
@@ -69,18 +71,18 @@
                 </thead>
                 <tbody>
                     <?php foreach($infantes as $infante):?>
-                    <tr>
-                        <td><?=$infante->APELLIDOS_INFANTE." ".$infante->NOM_INFANTE?></td>
-                        <td class="imagen-tabla"><img src="<?=CARPETA_ROOT?>/imagenes/<?=$infante->FOTO ?>"></td>
-                        <td><?="# ".$infante->ID_DISPOSITIVO?></td>
-                        <td>
-                            <div class="alinear-btn">
-                                <a href="<?=CARPETA_ROOT?>/admin/infante/ver_infante.php?id=<?=$infante->ID_INFANTE?>" class="btn-azul-redondo"><i class='bx bx-map'></i></a>
-                                <a href="#" class="btn-rojo-redondo"> <i class='bx bx-trash' ></i></a>
-                                <a href="<?=CARPETA_ROOT?>/admin/infante/editar_infante.php?id=<?=$infante->ID_INFANTE?>" class="btn-amarillo-redondo"><i class='bx bxs-pencil' ></i></a>                                            
-                            </div>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td><?=$infante->APELLIDOS_INFANTE." ".$infante->NOM_INFANTE?></td>
+                            <td class="imagen-tabla"><img src="<?=CARPETA_ROOT?>/imagenes/<?=$infante->FOTO ?>"></td>
+                            <td><?="# ".$infante->ID_DISPOSITIVO?></td>
+                            <td>
+                                <div class="alinear-btn">
+                                    <a href="<?=CARPETA_ROOT?>/admin/infante/ver_infante.php?id=<?=$infante->ID_INFANTE?>" class="btn-azul-redondo"><i class='bx bx-map'></i></a>
+                                    <a href="javascript:AlertaEliminarItem(<?=$infante->ID_INFANTE ?>, '<?=CARPETA_ROOT?>/admin/infante/eliminar_infante.php');" class="btn-rojo-redondo"> <i class='bx bx-trash' ></i></a>
+                                    <a href="<?=CARPETA_ROOT?>/admin/infante/editar_infante.php?id=<?=$infante->ID_INFANTE?>" class="btn-amarillo-redondo"><i class='bx bxs-pencil' ></i></a>                                            
+                                </div>
+                            </td>
+                        </tr>
                     <?php endforeach;?>
                 </tbody>
             </table>

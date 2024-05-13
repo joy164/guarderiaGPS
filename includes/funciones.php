@@ -24,7 +24,7 @@ function estaAutenticado():void{
     session_start();
     
     if(!$_SESSION['login'])
-        header('Location: /bienes-raices/index.php');
+    header('Location: '.CARPETA_ROOT.'/index.php');
 }
 
 function filtrarID(string $id, string $url):void{

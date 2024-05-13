@@ -1,10 +1,11 @@
 <?php 
     require '../../includes/app.php';    
     use App\Infante;
+    estaAutenticado();
 
     $ID = $_GET['id'] ?? 0;
 
-    filtrarID($ID, CARPETA_ROOT.'/admin/admin_infante.php?actualizado=3');
+    filtrarID($ID, CARPETA_ROOT.'/admin/infante/admin_infante.php?actualizado=3');
 
     $errores = Infante::get_errores();
     $infante = Infante::find($ID);

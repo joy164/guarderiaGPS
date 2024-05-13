@@ -56,22 +56,29 @@
                 <Label for="tel_contacto">Telefono de contacto: </Label>
                 <input name="infante[TEL_CONTACT_EM]" id="tel_contacto" class ="input-text" type="tel" placeholder="Telefono del contacto de emergencia" value="<?= s($infante->TEL_CONTACT_EM)?>" <?=($tipoForm === 3)?"DISABLED":""?>>    
             </div>
+
+            <?php if($tipoForm === 3):?>
+                <a class="btn-llamada" href="tel:+52<?= s($infante->TEL_CONTACT_EM)?>">Llamar al contacto de emergencia</a>
+                <a class="btn-llamada" href="tel:+52911">Llamar al 911</a>
+            <?php endif;?>    
         </div>
     </fieldset>
     
-    
     <?php if($tipoForm === 3):?>
-        <div id="map" style="height: 30rem;width: 100%;margin: 2rem auto;"></div>
-            <script>
-                const map = L.map('map').setView([<?= s($infante->LAT)?>,<?= s($infante->LON)?>], 20);
-                var marker = L.marker([<?= s($infante->LAT)?>,<?= s($infante->LON)?>]).addTo(map);
-                marker.bindPopup("Ubicacion de: <?=s($infante->NOM_INFANTE)?>").openPopup();
-                const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 19,
-                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                }).addTo(map);
-            </script>
-        </div>
+        <fieldset>
+            <legend>Localización</legend>
+                <div id="map" style="height: 30rem;width: 100%;margin: 2rem auto;"></div>
+                    <script>
+                        const map = L.map('map').setView([<?= s($infante->LAT)?>,<?= s($infante->LON)?>], 20);
+                        var marker = L.marker([<?= s($infante->LAT)?>,<?= s($infante->LON)?>]).addTo(map);
+                        marker.bindPopup("Ubicacion de: <?=s($infante->NOM_INFANTE)?>").openPopup();
+                        const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            maxZoom: 19,
+                            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                        }).addTo(map);
+                    </script>
+                </div>
+        </fieldset>
     <?php endif;?>
     
     <?php if($tipoForm === 1 || $tipoForm === 2):?>
