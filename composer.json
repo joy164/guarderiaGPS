@@ -1,6 +1,6 @@
 {
     "name": "joel-alejandro/guarderia-gps",
-    "description": "proyecto final de aplicacion de redes(no nos enseño nada el profesor)",
+    "description": "proyecto final de aplicacion de redes",
     "require": {},
     "autoload": {
         "psr-4": {

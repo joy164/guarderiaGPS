@@ -58,8 +58,14 @@
             </div>
 
             <?php if($tipoForm === 3):?>
-                <a class="btn-llamada" href="tel:+52<?= s($infante->TEL_CONTACT_EM)?>">Llamar al contacto de emergencia</a>
-                <a class="btn-llamada" href="tel:+52911">Llamar al 911</a>
+                <div class="campo alinear-centro">
+                    <a class="btn-llamada" href="tel:+52<?= s($infante->TEL_CONTACT_EM)?>">Llamar al contacto</a>
+                </div>
+                
+                <div class="campo alinear-centro">
+                    <a class="btn-llamada" href="tel:+52911">Llamar al 911</a>
+                </div>
+                
             <?php endif;?>    
         </div>
     </fieldset>
