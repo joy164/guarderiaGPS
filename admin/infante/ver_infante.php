@@ -1,10 +1,13 @@
 <?php 
     require '../../includes/app.php';    
     use App\Infante;
-
+    
     $ID = $_GET['id'] ?? 0;
 
-    filtrarID($ID, CARPETA_ROOT.'/admin/admin_infante.php?actualizado=3');
+    $archivoActual = $_SERVER['PHP_SELF']."?id=".$ID;
+    header("refresh:7;url=".$archivoActual);
+
+    filtrarID($ID, CARPETA_ROOT.'/admin/infante/admin_infante.php?actualizado=3');
     
     $infante = Infante::find($ID);
     $tipoForm = 3;
