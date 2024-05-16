@@ -6,7 +6,7 @@ class Infante{
 
     private static $db;
     private static $errores = [];
-    private static $columnasDB =  ['ID_INFANTE', 'FOTO', 'NOM_INFANTE', 'APELLIDOS_INFANTE', 'ID_DISPOSITIVO', 'ALERGIA_MED', 'ALERGIA_ALIM', 'NOM_CONTACT_EM', 'TEL_CONTACT_EM'];
+    private static $columnasDB =  ['ID_INFANTE', 'FOTO', 'NOM_INFANTE', 'APELLIDOS_INFANTE', 'ID_DISPOSITIVO', 'DIR_INFANTE', 'ALERGIA_MED', 'ALERGIA_ALIM', 'NOM_CONTACT_EM', 'TEL_CONTACT_EM'];
 
     //atributos de la clase
     public $ID_INFANTE;
@@ -14,6 +14,7 @@ class Infante{
     public $NOM_INFANTE;
     public $APELLIDOS_INFANTE;
     public $ID_DISPOSITIVO;
+    public $DIR_INFANTE;
     public $ALERGIA_MED;
     public $ALERGIA_ALIM;
     public $NOM_CONTACT_EM; 
@@ -27,6 +28,7 @@ class Infante{
         $this->NOM_INFANTE = $args['NOM_INFANTE']??'';
         $this->APELLIDOS_INFANTE = $args['APELLIDOS_INFANTE']??'';
         $this->ID_DISPOSITIVO = $args['ID_DISPOSITIVO']??'';
+        $this->DIR_INFANTE = $args['DIR_INFANTE']??'';
         $this->ALERGIA_MED = $args['ALERGIA_MED']??'';
         $this->ALERGIA_ALIM = $args['ALERGIA_ALIM']??'';        
         $this->NOM_CONTACT_EM = $args['NOM_CONTACT_EM']??'';
@@ -101,6 +103,7 @@ class Infante{
         if(!$this->NOM_INFANTE) self::$errores[]= "Debes agregar un nombre al infante";
         if(!$this->APELLIDOS_INFANTE) self::$errores[]= "Debes agregar los apellidos al infante";
         if(!$this->ID_DISPOSITIVO) self::$errores[]= "Debes ingresar el ID del dispositivo/brazalete";
+        if(!$this->DIR_INFANTE) self::$errores[]= "Debes ingresar la direccion del infante";
         if(!$this->ALERGIA_MED) self::$errores[]= "Si el infante no tiene alergias medicas debe colocar \"Sin alergias\" concientemente";
         if(!$this->ALERGIA_ALIM) self::$errores[]= "Si el infante no tiene alergias de alimento debe colocar \"Sin alergias\" concientemente";
         if(!$this->NOM_CONTACT_EM) self::$errores[]= "El nombre del contacto de emergencia es obligatorio";

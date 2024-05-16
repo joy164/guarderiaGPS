@@ -30,7 +30,7 @@
                 <Label for="id_brazalete">ID de brazalete:</Label>
                 <input name="infante[ID_DISPOSITIVO]" id="id_brazalete" class ="input-text" type="text" placeholder="ID del brazalete del infante" value="<?= s($infante->ID_DISPOSITIVO)?>" <?=($tipoForm === 3)?"DISABLED":""?>>
             </div>
-    
+            
             <div class="campo text-restrict">
                 <Label for="alergia_medicamentos">Alergias con medicamentos:</Label>
                 <textarea name="infante[ALERGIA_MED]" id="alergia_medicamentos" class ="input-text text-restrict" placeholder="ingrese alergias o restricciones que tiene el infante medicamente" <?=($tipoForm === 3)?"DISABLED":""?>><?= s($infante->ALERGIA_MED)?> </textarea>    
@@ -39,6 +39,11 @@
             <div class="campo text-restrict">
                 <Label for="alergia_alimentos">Alergias con alimentos:</Label>
                 <textarea name="infante[ALERGIA_ALIM]" id="alergia_alimentos" class ="input-text text-restrict" placeholder="ingrese alergias o restricciones que tiene el infante con el alimento" <?=($tipoForm === 3)?"DISABLED":""?>><?= s($infante->ALERGIA_ALIM)?></textarea>    
+            </div>
+
+            <div class="campo input-largo">
+                <Label for="DIR_INFANTE">Direccion de infante:</Label>
+                <textarea name="infante[DIR_INFANTE]" id="DIR_INFANTE" class ="input-text text-restrict" placeholder="ingrese la dirección que tiene el infante" <?=($tipoForm === 3)?"DISABLED":""?>><?= s($infante->DIR_INFANTE)?> </textarea>    
             </div>
         </div>
 
